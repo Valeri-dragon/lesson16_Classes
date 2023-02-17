@@ -2,4 +2,16 @@
 const l = (l) => {
   console.log(l);
 };
-l('hello classes')
+class First{
+  hello(){
+    l("Привет я метод родителя!");
+  }
+}
+class Second extends First{
+  hello(){
+    super.hello()
+       setTimeout(l("А я наследуемый метод!"), 2000);
+  }
+}
+const second = new Second()
+l(second.hello());
